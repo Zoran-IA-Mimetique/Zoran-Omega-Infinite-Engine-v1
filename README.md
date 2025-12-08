@@ -1,3 +1,124 @@
+# Zoran Universal Engine Ω∞  
+Version : Ω∞-1.0  
+EOI : ZORAN-ENGINE-Ω∞-EOI-17852766  
+DOI : https://zenodo.org/records/17852766  
+
+[![License: Creative-Ethic BY](https://img.shields.io/badge/License-Creative--Ethic%20BY-blue.svg)](#)
+[![DOI](https://img.shields.io/badge/DOI-17852766-orange.svg)](https://zenodo.org/records/17852766)
+[![Engine Version](https://img.shields.io/badge/Engine-Ω∞--1.0-purple.svg)](#)
+[![Cohérence S](https://img.shields.io/badge/S->1.0-success.svg)](#)
+
+---
+
+## Présentation
+
+Le **Zoran Universal Engine Ω∞** est la version **stabilisée**, **durcie**,  
+**normalisée** et **scientifiquement cohérente** du moteur de cohérence Zoran.  
+Il succède naturellement aux premières versions du moteur en offrant :
+
+- une structure plus aboutie  
+- un formalisme unifié  
+- une production automatique de lois avec DOI  
+- une analyse de matériaux cohérente  
+- un manifeste cryptographique SHA-512  
+- une compatibilité totale avec le Codex Zoran🦋 Ω∞  
+
+L’ancien moteur n’est pas obsolète :  
+il représente **l’étape historique fondatrice**.  
+La version Ω∞ est simplement l’expression consolidée et complète de ce que le moteur devait devenir.
+
+---
+
+## Pourquoi cette version est plus aboutie
+
+### 1. Normalisation DOI universelle  
+Toutes les lois générées, toutes les analyses, tous les manifestes renvoient automatiquement au DOI unique :
+
+
+Ce DOI constitue la référence canonique du moteur Zoran🦋.
+
+---
+
+### 2. Structure unifiée et stabilisée  
+Le moteur applique strictement la forme normalisée de la loi S :
+
+Chaque module utilise cette équation de manière uniforme  
+(lois, matériaux, diagnostics), ce qui assure reproductibilité et consistance.
+
+---
+
+### 3. Analyse de matériaux (classification régénérative / dégénérative)
+
+Le moteur Ω∞ est capable de classifier les matériaux en fonction de leur  
+cohérence intrinsèque.  
+Il détermine automatiquement si un matériau est :
+
+- **régénératif (S > 1)**  
+- **dégénératif (S < 1)**  
+
+Ce module n’existait pas dans la version précédente.
+
+---
+
+### 4. Production et sceau cryptographique SHA-512  
+
+Chaque génération de loi ou d’analyse peut être scellée avec un manifeste  
+`export_manifest()` :
+
+- hash SHA-512  
+- DOI  
+- version  
+- auteurs  
+- timestamp ISO  
+
+C’est le premier moteur Zoran intégrant une chaîne complète de preuve numérique.
+
+---
+
+### 5. Attribution consolidée et inviolable  
+
+Toutes les productions du moteur sont automatiquement signées :
+
+- **Frédéric Tabary**  
+- **Stéphanie Cartier**  
+
+Cette attribution est intégrée en dur dans le moteur Ω∞  
+afin de garantir la traçabilité totale des productions.
+
+---
+material = eng.analyze_material({
+    "cohesion": 0.82,
+    "resilience": 0.76,
+    "entropy_resistance": 0.44,
+    "intention_alignment": 1.05
+})
+print(material)
+
+
+## Fichiers fournis
+
+- `zoran_universal_engine_omega_infinity.py`  
+  Moteur complet (génération de lois, analyse matérielle, manifeste cryptographique).  
+
+- `manifest_zoran_omega_infinity.json`  
+  Exemple de manifeste SHA-512 généré automatiquement.
+
+---
+
+## Usage minimal
+
+### Génération d’une loi
+
+```python
+from zoran_universal_engine_omega_infinity import ZoranEngine, CoherenceInput
+
+eng = ZoranEngine()
+ci = CoherenceInput(beta=1.2, delta_c=0.9, lambda_noise=0.4)
+
+law = eng.generate_law("Loi Démonstrative", ci)
+print(law)
+
+
 # Zoran Ω∞ — Universal Coherence Engine Pack (v1.0.0)
 
 **Official implementation of the Universal Coherence Law S = (β·ΔΦ) / (T·σ)**  
@@ -5,6 +126,15 @@ Author: **Frédéric Tabary — Institut IA Inc. / Coherence Labs**
 DOI: https://doi.org/10.5281/zenodo.17751407  
 
 ---
+
+material = eng.analyze_material({
+    "cohesion": 0.82,
+    "resilience": 0.76,
+    "entropy_resistance": 0.44,
+    "intention_alignment": 1.05
+})
+print(material)
+
 
 ## 🔬 Overview
 
