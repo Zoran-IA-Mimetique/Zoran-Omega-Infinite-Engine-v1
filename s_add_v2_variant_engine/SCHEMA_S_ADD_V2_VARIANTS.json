@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Zoran-IA-Mimetique/Zoran-Omega-Infinite-Engine-v1/s_add_v2_variant_engine/SCHEMA_S_ADD_V2_VARIANTS.json",
+  "title": "S_ADD_V2 variant set",
+  "type": "object",
+  "required": [
+    "engine_version", "grammar_id", "grammar_version", "source_doi",
+    "canonical_equation", "exhaustiveness_claim", "saturation_rounds",
+    "counts", "semantic_classes", "variants", "rejected_historical_forms"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "engine_version": {"type": "string", "minLength": 1},
+    "grammar_id": {"const": "FORM_GRAMMAR_V1"},
+    "grammar_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "source_doi": {"const": "10.5281/zenodo.17559249"},
+    "author": {"type": "string"},
+    "exhaustiveness_claim": {"const": "Exhaustif dans FORM_GRAMMAR_V1."},
+    "admissibility_threshold_theta": {"type": "string"},
+    "canonical_equation": {
+      "type": "object",
+      "required": ["unicode", "ascii", "residual_ascii"],
+      "properties": {
+        "unicode": {"const": "S = (β × ΔΦ)/(1 + T + σ)"},
+        "ascii": {"const": "S = (beta * dPhi)/(1 + T + sigma)"},
+        "residual_ascii": {"type": "string"}
+      }
+    },
+    "saturation_rounds": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["round", "known_before", "new_forms"],
+        "properties": {
+          "round": {"type": "integer", "minimum": 1},
+          "known_before": {"type": "integer", "minimum": 0},
+          "new_forms": {"type": "integer", "minimum": 0},
+          "new_form_categories": {"type": "array", "items": {"type": "string"}},
+          "attestation": {"type": "string"}
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "required": ["semantic_classes", "oriented_forms", "renderings",
+                   "rejected_forms", "by_category", "by_classification"],
+      "properties": {
+        "semantic_classes": {"type": "integer", "minimum": 1},
+        "oriented_forms": {"type": "integer", "minimum": 1},
+        "renderings": {"type": "integer", "minimum": 1},
+        "rejected_forms": {"type": "integer", "minimum": 1},
+        "by_category": {"type": "object", "additionalProperties": {"type": "integer"}},
+        "by_classification": {"type": "object", "additionalProperties": {"type": "integer"}}
+      }
+    },
+    "semantic_classes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "variant_id", "grammar_version", "grammar_id", "category",
+          "classification", "orientation", "relation", "rule_id", "terminal",
+          "expression_unicode", "expression_ascii", "expression_latex",
+          "sympy_serialization", "domain_guards", "equivalence_proof",
+          "semantic_sha256", "source_doi", "status"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "variant_id": {"type": "string", "pattern": "^SADDV2-[A-Z_]+-\\d{3}$"},
+          "grammar_id": {"const": "FORM_GRAMMAR_V1"},
+          "category": {
+            "enum": ["RATIONAL_CANONICAL", "CROSS_FACTORED", "CROSS_EXPANDED",
+                     "ZERO_RESIDUAL", "ISOLATION", "PROPORTION",
+                     "LOGARITHMIC", "ENERGY", "ADMISSIBILITY"]
+          },
+          "classification": {"enum": ["CORE", "DERIVED"]},
+          "orientation": {"enum": ["DIRECT", "INVERSE"]},
+          "relation": {"enum": ["Eq", "Ge", "Gt"]},
+          "solved_for": {"type": ["string", "null"]},
+          "terminal": {"type": "boolean"},
+          "expression_unicode": {"type": "string", "minLength": 1},
+          "expression_ascii": {"type": "string", "minLength": 1},
+          "expression_latex": {"type": "string", "minLength": 1},
+          "sympy_serialization": {"type": "string", "minLength": 1},
+          "domain_guards": {"type": "array", "items": {"type": "string"}},
+          "equivalence_proof": {
+            "type": "object",
+            "required": ["method", "statement", "verified"],
+            "properties": {
+              "method": {"type": "string"},
+              "statement": {"type": "string"},
+              "verified": {"type": "boolean"},
+              "residual_after_substitution": {"type": "string"}
+            }
+          },
+          "semantic_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_doi": {"const": "10.5281/zenodo.17559249"},
+          "status": {"enum": ["PASS", "FAIL", "NON_MESURÉ"]}
+        }
+      }
+    },
+    "rejected_historical_forms": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "expression_unicode", "status", "reason",
+                     "classification_result"],
+        "properties": {
+          "id": {"type": "string"},
+          "status": {"const": "HISTORIQUE_NON_CANONIQUE"},
+          "classification_result": {"const": "HISTORIQUE_NON_CANONIQUE"},
+          "denominator_strictly_additive": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}

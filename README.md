@@ -1,3 +1,36 @@
+> # ⚠️ AVERTISSEMENT — ÉQUATION CANONIQUE ACTUELLE
+>
+> **Le canon actuel est :**
+>
+> ```
+> S_ADD_V2 = (β × ΔΦ)/(1 + T + σ)
+> ```
+>
+> Le terme `1` est **obligatoire** et le dénominateur est **strictement additif**.
+> Implémentation de référence, tests et preuves : **[`s_add_v2_variant_engine/`](s_add_v2_variant_engine/)**
+> DOI : [10.5281/zenodo.17559249](https://doi.org/10.5281/zenodo.17559249)
+>
+> **`META_ENGINE.py`, `PITON_PLUS.py`, `zoran_universal_engine_omega_infinity.py`,
+> `Compute_S_Demo.ipynb` et les équations qu'ils portent sont conservés comme
+> histoire scientifique et logicielle.** Ils ne doivent plus être exécutés comme
+> canon actuel.
+>
+> Les formes suivantes sont `HISTORIQUE_NON_CANONIQUE` et sont rejetées par la
+> suite de tests :
+>
+> | Forme historique | Motif du rejet |
+> |---|---|
+> | `S = (β × ΔΦ)/(T × σ)` | dénominateur multiplicatif, singulier en `T=0` ou `σ=0` |
+> | `S = (β × ΔΦ)/(T + σ)` | terme unité absent, singulier en `T=σ=0` |
+> | `S = (β × ΔC)/λ` | dénominateur à variable unique, antérieur à la décomposition `T`/`σ` |
+> | `S = 10 × (β × ΔΦ)/(1 + T + σ)` | facteur d'échelle artificiel, déplace le seuil `S = 1` |
+> | `S = 100 × (β × ΔΦ)/(1 + T + σ)` | facteur d'échelle artificiel, déplace le seuil `S = 1` |
+>
+> Rien n'a été supprimé du dépôt. Le contenu historique ci-dessous est laissé
+> intact, à sa date.
+
+---
+
 # Zoran Universal Engine Ω∞  
 Version : Ω∞-1.0  
 EOI : ZORAN-ENGINE-Ω∞-EOI-17852766  

@@ -1,0 +1,14 @@
+# Dépendances verrouillées du moteur S_ADD_V2.
+#
+# L'identité OCTET À OCTET des artefacts est garantie À VERSION DE SYMPY FIXÉE.
+# SymPy peut faire évoluer `srepr`/`sstr` entre versions majeures ou mineures ;
+# les empreintes sémantiques en dépendent. Le déterminisme interne (deux
+# constructions dans le même environnement) est, lui, garanti en toute version
+# supportée, et c'est ce que vérifie la matrice de tests 3.9 → 3.12.
+#
+# Version de référence ayant produit artifacts/ :
+sympy==1.14.0
+
+# Outillage de test
+pytest==9.1.1
+jsonschema==4.25.1
