@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "s-add-v2-variant-engine"
+version = "1.0.0"
+description = "Moteur déterministe de variantes de S_ADD_V2 = (β × ΔΦ)/(1 + T + σ), exhaustif dans FORM_GRAMMAR_V1."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Frédéric Tabary", email = "tabary01@gmail.com" },
+]
+maintainers = [
+    { name = "Institut IA Inc. — Coherence Labs" },
+]
+keywords = [
+    "coherence", "S_ADD_V2", "symbolic", "sympy", "determinism",
+    "form-grammar", "falsification", "zoran",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "sympy>=1.12,<2",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4",
+    "jsonschema>=4.19",
+]
+
+[project.urls]
+Homepage = "https://github.com/Zoran-IA-Mimetique/Zoran-Omega-Infinite-Engine-v1"
+Source = "https://github.com/Zoran-IA-Mimetique/Zoran-Omega-Infinite-Engine-v1/tree/main/s_add_v2_variant_engine"
+DOI = "https://doi.org/10.5281/zenodo.17559249"
+
+[project.scripts]
+s-add-v2-variant-engine = "s_add_v2_variant_engine.variant_engine_s_add_v2:main"
+
+[tool.setuptools]
+packages = ["s_add_v2_variant_engine"]
+package-dir = { "s_add_v2_variant_engine" = "." }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,127 @@
+name: S_ADD_V2 variant engine
+
+# Canon testé : S_ADD_V2 = (β × ΔΦ)/(1 + T + σ)
+# DOI         : 10.5281/zenodo.17559249
+
+on:
+  push:
+    branches: ["main", "agent/**"]
+    paths:
+      - "s_add_v2_variant_engine/**"
+      - ".github/workflows/s-add-v2-ci.yml"
+      - "CITATION.cff"
+      - "zenodo.json"
+      - "README.md"
+  pull_request:
+    paths:
+      - "s_add_v2_variant_engine/**"
+      - ".github/workflows/s-add-v2-ci.yml"
+      - "CITATION.cff"
+      - "zenodo.json"
+      - "README.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: tests · python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install in a clean environment
+        working-directory: s_add_v2_variant_engine
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[test]"
+
+      - name: Run test suite
+        run: python -m pytest s_add_v2_variant_engine/tests -q
+
+  determinism:
+    name: déterminisme bit à bit et artefacts à jour
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install with pinned dependencies
+        working-directory: s_add_v2_variant_engine
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-lock.txt
+          python -m pip install -e . --no-deps
+
+      - name: Regenerate artifacts twice with different SOURCE_DATE_EPOCH
+        run: |
+          SOURCE_DATE_EPOCH=1700000000 python -m s_add_v2_variant_engine.variant_engine_s_add_v2 --output /tmp/run1/
+          SOURCE_DATE_EPOCH=1800000000 python -m s_add_v2_variant_engine.variant_engine_s_add_v2 --output /tmp/run2/
+
+      - name: Variant set must be byte-identical across runs
+        run: |
+          cmp /tmp/run1/S_ADD_V2_VARIANTS.json /tmp/run2/S_ADD_V2_VARIANTS.json
+          echo "OK — variantes identiques bit à bit"
+
+      - name: Canonical manifest hash must be timestamp-independent
+        run: |
+          H1=$(python -c "import json;print(json.load(open('/tmp/run1/PROOF_MANIFEST.json'))['canonical_sha256'])")
+          H2=$(python -c "import json;print(json.load(open('/tmp/run2/PROOF_MANIFEST.json'))['canonical_sha256'])")
+          echo "run1=$H1"
+          echo "run2=$H2"
+          test "$H1" = "$H2"
+          echo "OK — canonical_sha256 stable"
+
+      - name: Committed artifacts must match a fresh generation
+        run: |
+          cmp /tmp/run1/S_ADD_V2_VARIANTS.json s_add_v2_variant_engine/artifacts/S_ADD_V2_VARIANTS.json
+          COMMITTED=$(python -c "import json;print(json.load(open('s_add_v2_variant_engine/artifacts/PROOF_MANIFEST.json'))['canonical_sha256'])")
+          FRESH=$(python -c "import json;print(json.load(open('/tmp/run1/PROOF_MANIFEST.json'))['canonical_sha256'])")
+          test "$COMMITTED" = "$FRESH"
+          echo "OK — artefacts commités à jour"
+
+  canon:
+    name: garde-fou du canon et du DOI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: DOI present in every required file
+        run: |
+          set -e
+          for f in \
+            s_add_v2_variant_engine/variant_engine_s_add_v2.py \
+            s_add_v2_variant_engine/README.md \
+            s_add_v2_variant_engine/FORM_GRAMMAR_V1.json \
+            s_add_v2_variant_engine/artifacts/S_ADD_V2_VARIANTS.json \
+            s_add_v2_variant_engine/artifacts/PROOF_MANIFEST.json \
+            CITATION.cff zenodo.json README.md ; do
+            grep -q "10.5281/zenodo.17559249" "$f" || { echo "DOI absent de $f"; exit 1; }
+            echo "DOI OK — $f"
+          done
+
+      - name: Root README must carry the canonical warning
+        run: |
+          grep -q "S_ADD_V2 = (β × ΔΦ)/(1 + T + σ)" README.md
+          grep -q "HISTORIQUE_NON_CANONIQUE" README.md
+          echo "OK — avertissement canonique présent"
+
+      - name: Forbidden wording must never be asserted
+        run: |
+          if grep -n "validé scientifiquement" s_add_v2_variant_engine/artifacts/*.json ; then
+            echo "formulation interdite présente dans un artefact"; exit 1
+          fi
+          echo "OK — aucune formulation interdite émise"

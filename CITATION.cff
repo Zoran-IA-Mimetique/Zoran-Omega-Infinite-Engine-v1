@@ -1,5 +1,30 @@
 cff-version: 1.2.0
+message: "Si vous utilisez ce logiciel, merci de le citer comme ci-dessous."
+title: "Zoran Ω∞ Engine — S_ADD_V2 Variant Engine"
+abstract: >-
+  Moteur déterministe générant les formes de l'équation canonique
+  S_ADD_V2 = (β × ΔΦ)/(1 + T + σ), exhaustif dans la grammaire fermée
+  FORM_GRAMMAR_V1. Le terme unité est obligatoire et le dénominateur est
+  strictement additif. Les formes historiques à dénominateur multiplicatif
+  (T × σ), sans terme unité (T + σ), ou multipliées par un facteur d'échelle
+  artificiel sont classées HISTORIQUE_NON_CANONIQUE et rejetées par les tests.
+type: software
+version: "1.0.0"
+license: MIT
+repository-code: "https://github.com/Zoran-IA-Mimetique/Zoran-Omega-Infinite-Engine-v1"
+doi: "10.5281/zenodo.17559249"
 authors:
 - family-names: Tabary
   given-names: Frédéric
   affiliation: Institut IA Inc. — Coherence Labs
+keywords:
+  - coherence
+  - S_ADD_V2
+  - FORM_GRAMMAR_V1
+  - symbolic-computation
+  - determinism
+  - falsification
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.17559249"
+    description: "DOI source du moteur de variantes S_ADD_V2"

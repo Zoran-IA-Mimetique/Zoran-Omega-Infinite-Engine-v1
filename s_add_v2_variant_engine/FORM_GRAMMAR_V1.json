@@ -1,0 +1,84 @@
+{
+  "grammar_id": "FORM_GRAMMAR_V1",
+  "grammar_version": "1.0.0",
+  "source_doi": "10.5281/zenodo.17559249",
+  "author": "Frédéric Tabary — Institut IA Inc.",
+  "canonical_equation": {
+    "id": "S_ADD_V2",
+    "unicode": "S = (β × ΔΦ)/(1 + T + σ)",
+    "ascii": "S = (beta * dPhi)/(1 + T + sigma)",
+    "denominator": {
+      "unicode": "D = 1 + T + σ",
+      "structure": "STRICTLY_ADDITIVE",
+      "unit_term_required": true
+    },
+    "residual": {
+      "unicode": "F = S × D − β × ΔΦ = 0",
+      "ascii": "F = S*(1 + T + sigma) - beta*dPhi = 0"
+    }
+  },
+  "domain": {
+    "field": "REAL",
+    "default_mode": "PHYSICAL",
+    "constraints": [
+      "T >= 0",
+      "sigma >= 0",
+      "D = 1 + T + sigma >= 1 > 0"
+    ],
+    "note": "Le terme unité rend D strictement positif sur tout le domaine physique. Aucune régularisation ad hoc n'est requise, contrairement aux dénominateurs multiplicatifs historiques qui exigeaient T_min/sigma_min."
+  },
+  "variables": {
+    "S": "cohérence (sortie)",
+    "beta": "direction / alignement",
+    "DeltaPhi": "flux ou gain de structure",
+    "T": "coût / tension",
+    "sigma": "bruit / dispersion"
+  },
+  "closure_requirements": [
+    {"id": 1, "category": "RATIONAL_CANONICAL", "description": "forme canonique rationnelle et orientation inverse"},
+    {"id": 2, "category": "CROSS_FACTORED", "description": "égalité factorisée croisée et orientation inverse"},
+    {"id": 3, "category": "CROSS_EXPANDED", "description": "égalité développée et orientation inverse"},
+    {"id": 4, "category": "ZERO_RESIDUAL", "description": "résidu nul factorisé, développé, et signes inverses"},
+    {"id": 5, "category": "ISOLATION", "description": "isolation de S, beta, DeltaPhi, T, sigma avec orientations inverses et gardes"},
+    {"id": 6, "category": "PROPORTION", "description": "toutes les proportions admissibles issues de S*D = beta*DeltaPhi"},
+    {"id": 7, "category": "LOGARITHMIC", "description": "représentations logarithmiques bornées aux variables positives", "classification": "DERIVED", "terminal": true},
+    {"id": 8, "category": "RENDERING", "description": "rendus ASCII, Unicode, LaTeX, SymPy/JSON", "counts_as_new_law": false},
+    {"id": 9, "category": "ADMISSIBILITY", "description": "formes d'admissibilité paramétrées par un seuil theta", "separate_function": true},
+    {"id": 10, "category": "ENERGY", "description": "vue énergétique E_Z = -ln(S)", "classification": "DERIVED", "terminal": true}
+  ],
+  "rewrite_rules": [
+    {"rule_id": "R01_SWAP_ORIENTATION", "terminal": false, "guards": []},
+    {"rule_id": "R02_CLEAR_DENOMINATORS", "terminal": false, "guards": ["D != 0"]},
+    {"rule_id": "R03_EXPAND", "terminal": false, "guards": []},
+    {"rule_id": "R04_FACTOR", "terminal": false, "guards": []},
+    {"rule_id": "R05_ZERO_RESIDUAL", "terminal": false, "guards": []},
+    {"rule_id": "R06_NEGATE_RESIDUAL", "terminal": false, "guards": []},
+    {"rule_id": "R07_ISOLATE_S", "terminal": false, "guards": ["D != 0"]},
+    {"rule_id": "R08_ISOLATE_BETA", "terminal": false, "guards": ["DeltaPhi != 0"]},
+    {"rule_id": "R09_ISOLATE_DELTAPHI", "terminal": false, "guards": ["beta != 0"]},
+    {"rule_id": "R10_ISOLATE_T", "terminal": false, "guards": ["S != 0"]},
+    {"rule_id": "R11_ISOLATE_SIGMA", "terminal": false, "guards": ["S != 0"]},
+    {"rule_id": "R12_PROPORTION", "terminal": false, "guards": ["denominator of each ratio != 0"]},
+    {"rule_id": "R13_LOGARITHM", "terminal": true, "guards": ["S > 0", "beta > 0", "DeltaPhi > 0", "D > 0"]},
+    {"rule_id": "R14_ENERGY", "terminal": true, "guards": ["S > 0"]}
+  ],
+  "exclusions": [
+    {"id": "X1", "rule": "ADD_ARBITRARY_TERM_BOTH_SIDES", "reason": "génère un ensemble infini sans contenu nouveau"},
+    {"id": "X2", "rule": "MULTIPLY_BY_ARBITRARY_NONZERO_FUNCTION", "reason": "génère un ensemble infini sans contenu nouveau"},
+    {"id": "X3", "rule": "UNBOUNDED_SYMBOL_RENAMING", "reason": "alpha-équivalence, pas une forme nouvelle"},
+    {"id": "X4", "rule": "REPEATED_MONOTONE_TRANSFORMS", "reason": "log/exp itérés sans borne ; R13 et R14 sont TERMINAUX et ne réalimentent pas la clôture"},
+    {"id": "X5", "rule": "TYPOGRAPHIC_VARIANTS_AS_MATH_CLASSES", "reason": "les rendus sont des projections d'une même forme orientée, jamais des lois nouvelles"}
+  ],
+  "rejected_forms": [
+    {"id": "HIST_MULTIPLICATIVE", "unicode": "S = (β × ΔΦ)/(T × σ)", "status": "HISTORIQUE_NON_CANONIQUE", "reason": "dénominateur multiplicatif, singulier en T=0 ou σ=0"},
+    {"id": "HIST_ADDITIVE_NO_UNIT", "unicode": "S = (β × ΔΦ)/(T + σ)", "status": "HISTORIQUE_NON_CANONIQUE", "reason": "terme unité absent, singulier en T=σ=0"},
+    {"id": "HIST_LAMBDA", "unicode": "S = (β × ΔC)/λ", "status": "HISTORIQUE_NON_CANONIQUE", "reason": "dénominateur à variable unique, antérieur à la décomposition T/σ"},
+    {"id": "HIST_SCALED_10", "unicode": "S = 10 × (β × ΔΦ)/(1 + T + σ)", "status": "HISTORIQUE_NON_CANONIQUE", "reason": "facteur d'échelle artificiel, déplace le seuil S = 1"},
+    {"id": "HIST_SCALED_100", "unicode": "S = 100 × (β × ΔΦ)/(1 + T + σ)", "status": "HISTORIQUE_NON_CANONIQUE", "reason": "facteur d'échelle artificiel, déplace le seuil S = 1"}
+  ],
+  "exhaustiveness_claim": {
+    "wording_required": "Exhaustif dans FORM_GRAMMAR_V1.",
+    "forbidden_wording": ["toutes les formes possibles", "famille illimitée", "validé scientifiquement"],
+    "method": "point fixe : application répétée des règles non terminales jusqu'à une ronde sans nouvelle forme, suivie d'une seconde ronde vide attestant la saturation"
+  }
+}

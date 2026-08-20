@@ -1,0 +1,103 @@
+{
+  "canonical": {
+    "DETTE_COH": [
+      "La validation physique externe de S_ADD_V2 reste NON_MESURÉE : aucun jeu de données indépendant n'est comparé ici.",
+      "Le seuil θ = 1 est un seuil logique hérité, non calibré expérimentalement.",
+      "Les proxies de β, ΔΦ, T et σ ne sont pas fixés par ce moteur.",
+      "L'exhaustivité est relative à FORM_GRAMMAR_V1 et à elle seule ; toute extension de grammaire rouvre l'espace."
+    ],
+    "K3_status": "PASS",
+    "artifacts_sha256": {
+      "S_ADD_V2_VARIANTS.json": "674b1a387974661a38b375eb4f893ad441d576f058150945d6cf9a5677640fd9"
+    },
+    "canonical_equation_ascii": "S = (beta * dPhi)/(1 + T + sigma)",
+    "canonical_equation_unicode": "S = (β × ΔΦ)/(1 + T + σ)",
+    "counts": {
+      "by_category": {
+        "ADMISSIBILITY": 6,
+        "CROSS_EXPANDED": 2,
+        "CROSS_FACTORED": 2,
+        "ENERGY": 2,
+        "ISOLATION": 10,
+        "LOGARITHMIC": 3,
+        "PROPORTION": 8,
+        "RATIONAL_CANONICAL": 2,
+        "ZERO_RESIDUAL": 8
+      },
+      "by_classification": {
+        "CORE": 38,
+        "DERIVED": 5
+      },
+      "oriented_forms": 43,
+      "rejected_forms": 5,
+      "renderings": 172,
+      "semantic_classes": 8
+    },
+    "engine_version": "s-add-v2-variant-engine-1.0.0",
+    "exhaustiveness_claim": "Exhaustif dans FORM_GRAMMAR_V1.",
+    "external_physical_validation": "NON_MESURÉ",
+    "grammar_id": "FORM_GRAMMAR_V1",
+    "grammar_sha256": "854691ce8bb877b39814b1b86a36d4648b503121806dc85ba7eb65b51e241681",
+    "grammar_version": "1.0.0",
+    "saturation_proof": {
+      "fixed_point_reached": true,
+      "rounds": [
+        {
+          "known_before": 1,
+          "new_form_categories": [
+            "CROSS_EXPANDED",
+            "CROSS_FACTORED",
+            "ENERGY",
+            "ISOLATION",
+            "LOGARITHMIC",
+            "PROPORTION",
+            "RATIONAL_CANONICAL",
+            "ZERO_RESIDUAL"
+          ],
+          "new_forms": 21,
+          "round": 1
+        },
+        {
+          "known_before": 22,
+          "new_form_categories": [
+            "CROSS_EXPANDED",
+            "CROSS_FACTORED",
+            "ISOLATION",
+            "PROPORTION",
+            "ZERO_RESIDUAL"
+          ],
+          "new_forms": 15,
+          "round": 2
+        },
+        {
+          "known_before": 37,
+          "new_form_categories": [],
+          "new_forms": 0,
+          "round": 3
+        },
+        {
+          "attestation": "SECOND_EMPTY_ROUND",
+          "known_before": 37,
+          "new_form_categories": [],
+          "new_forms": 0,
+          "round": 4
+        }
+      ],
+      "second_empty_round_attested": true
+    },
+    "source_doi": "10.5281/zenodo.17559249",
+    "status": "PASS — clôture formelle et computationnelle dans FORM_GRAMMAR_V1",
+    "unknowns": [
+      "Portée de la loi hors du domaine réel T ≥ 0, σ ≥ 0.",
+      "Comportement sous variables complexes ou matricielles."
+    ]
+  },
+  "canonical_sha256": "c9b2c23817b93e55d48eadab7342f3cc376359bb4052a235bc237fbf1f11de28",
+  "runtime_metadata_not_hashed": {
+    "git_commit": "56522f70881183c877d20294170d9430d1724788",
+    "platform": "Linux-6.18.5-fc-v20-x86_64-with-glibc2.39",
+    "python_version": "3.11.15",
+    "source_date_epoch": "unset",
+    "sympy_version": "1.14.0"
+  }
+}

@@ -1,1 +1,30 @@
-{"title": "Zoran \u03a9\u221e Engine Pack: META-ENGINE + PITON+", "description": "Official Python implementation of the Universal Law of Coherence (S).", "creators": [{"name": "Tabary, Fr\u00e9d\u00e9ric", "affiliation": "Institut IA Inc. \u2014 Coherence Labs"}], "upload_type": "software", "license": "MIT", "access_right": "open", "version": "1.0.0"}
+{
+  "title": "Zoran Ω∞ Engine Pack — S_ADD_V2 Variant Engine",
+  "description": "Moteur déterministe générant les formes de l'équation canonique S_ADD_V2 = (β × ΔΦ)/(1 + T + σ), exhaustif dans la grammaire fermée FORM_GRAMMAR_V1. Le terme unité est obligatoire et le dénominateur est strictement additif. Les moteurs historiques (META-ENGINE, PITON+) sont conservés comme histoire scientifique et logicielle mais ne constituent plus le canon actuel. DOI source : 10.5281/zenodo.17559249",
+  "creators": [
+    {
+      "name": "Tabary, Frédéric",
+      "affiliation": "Institut IA Inc. — Coherence Labs"
+    }
+  ],
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "version": "1.0.0",
+  "keywords": [
+    "coherence",
+    "S_ADD_V2",
+    "FORM_GRAMMAR_V1",
+    "symbolic computation",
+    "determinism",
+    "falsification"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.17559249",
+      "relation": "isDerivedFrom",
+      "resource_type": "software",
+      "scheme": "doi"
+    }
+  ]
+}

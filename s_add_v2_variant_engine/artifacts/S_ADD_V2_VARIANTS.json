@@ -1,0 +1,1322 @@
+{
+  "admissibility_threshold_theta": "Integer(1)",
+  "author": "Frédéric Tabary — Institut IA Inc. / Coherence Labs",
+  "canonical_equation": {
+    "ascii": "S = (beta * dPhi)/(1 + T + sigma)",
+    "residual_ascii": "S*(1 + T + sigma) - beta*dPhi = 0",
+    "unicode": "S = (β × ΔΦ)/(1 + T + σ)"
+  },
+  "counts": {
+    "by_category": {
+      "ADMISSIBILITY": 6,
+      "CROSS_EXPANDED": 2,
+      "CROSS_FACTORED": 2,
+      "ENERGY": 2,
+      "ISOLATION": 10,
+      "LOGARITHMIC": 3,
+      "PROPORTION": 8,
+      "RATIONAL_CANONICAL": 2,
+      "ZERO_RESIDUAL": 8
+    },
+    "by_classification": {
+      "CORE": 38,
+      "DERIVED": 5
+    },
+    "oriented_forms": 43,
+    "rejected_forms": 5,
+    "renderings": 172,
+    "semantic_classes": 8
+  },
+  "engine_version": "s-add-v2-variant-engine-1.0.0",
+  "exhaustiveness_claim": "Exhaustif dans FORM_GRAMMAR_V1.",
+  "grammar_id": "FORM_GRAMMAR_V1",
+  "grammar_version": "1.0.0",
+  "rejected_historical_forms": [
+    {
+      "classification_result": "HISTORIQUE_NON_CANONIQUE",
+      "denominator_strictly_additive": false,
+      "expression_unicode": "ΔΦ*β/(T*σ)",
+      "id": "HIST_MULTIPLICATIVE",
+      "reason": "dénominateur multiplicatif, singulier en T=0 ou σ=0",
+      "status": "HISTORIQUE_NON_CANONIQUE"
+    },
+    {
+      "classification_result": "HISTORIQUE_NON_CANONIQUE",
+      "denominator_strictly_additive": false,
+      "expression_unicode": "ΔΦ*β/(T + σ)",
+      "id": "HIST_ADDITIVE_NO_UNIT",
+      "reason": "terme unité absent, singulier en T=σ=0",
+      "status": "HISTORIQUE_NON_CANONIQUE"
+    },
+    {
+      "classification_result": "HISTORIQUE_NON_CANONIQUE",
+      "denominator_strictly_additive": true,
+      "expression_unicode": "10*ΔΦ*β/(T + σ + 1)",
+      "id": "HIST_SCALED_10",
+      "reason": "facteur d'échelle artificiel, déplace le seuil S = 1",
+      "status": "HISTORIQUE_NON_CANONIQUE"
+    },
+    {
+      "classification_result": "HISTORIQUE_NON_CANONIQUE",
+      "denominator_strictly_additive": true,
+      "expression_unicode": "100*ΔΦ*β/(T + σ + 1)",
+      "id": "HIST_SCALED_100",
+      "reason": "facteur d'échelle artificiel, déplace le seuil S = 1",
+      "status": "HISTORIQUE_NON_CANONIQUE"
+    },
+    {
+      "classification_result": "HISTORIQUE_NON_CANONIQUE",
+      "denominator_strictly_additive": false,
+      "expression_unicode": "(ΔΦ*β + 1)/(T + σ)",
+      "id": "HIST_UNIT_IN_NUMERATOR",
+      "reason": "terme unité déplacé au numérateur",
+      "status": "HISTORIQUE_NON_CANONIQUE"
+    }
+  ],
+  "saturation_rounds": [
+    {
+      "known_before": 1,
+      "new_form_categories": [
+        "CROSS_EXPANDED",
+        "CROSS_FACTORED",
+        "ENERGY",
+        "ISOLATION",
+        "LOGARITHMIC",
+        "PROPORTION",
+        "RATIONAL_CANONICAL",
+        "ZERO_RESIDUAL"
+      ],
+      "new_forms": 21,
+      "round": 1
+    },
+    {
+      "known_before": 22,
+      "new_form_categories": [
+        "CROSS_EXPANDED",
+        "CROSS_FACTORED",
+        "ISOLATION",
+        "PROPORTION",
+        "ZERO_RESIDUAL"
+      ],
+      "new_forms": 15,
+      "round": 2
+    },
+    {
+      "known_before": 37,
+      "new_form_categories": [],
+      "new_forms": 0,
+      "round": 3
+    },
+    {
+      "attestation": "SECOND_EMPTY_ROUND",
+      "known_before": 37,
+      "new_form_categories": [],
+      "new_forms": 0,
+      "round": 4
+    }
+  ],
+  "semantic_classes": [
+    "0d66d95d441c05de87b3b14de0812ccf2d6c7e82fe36d042cd29c95784ddd954",
+    "37464c7eb12fbdd52119fb742dfa7f744d82a843aeb41372eb24a103430b4b6b",
+    "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+    "56571c0880250d60ee01abc1f660b5ad5eec01abd8ab88ec819787716d3179a2",
+    "78396a584012115ae427676d20a1a6450001c9e8ba67d8ad8e2297c1a1811d7f",
+    "7d00c56c476f955f1737e4429bd962a85b23c24abd631dc437898b59ef47587e",
+    "b8e71afc933d7cca822fd9dbecc260f62d96b5412a1c21e5474556416a96b1b0",
+    "dd98c2b5b980452254ad3f2fd4d4f3dd027c1141be05da8aad5131eeea30ed08"
+  ],
+  "source_doi": "10.5281/zenodo.17559249",
+  "variants": [
+    {
+      "category": "RATIONAL_CANONICAL",
+      "classification": "CORE",
+      "domain_guards": [
+        "1 + T + sigma != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "S = dPhi*beta/(T + sigma + 1)",
+      "expression_latex": "S = \\frac{\\Delta\\Phi \\beta}{T + \\sigma + 1}",
+      "expression_unicode": "S = ΔΦ*β/(T + σ + 1)",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "SEED",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": "S",
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Symbol('S', real=True)\",\"relation\":\"Eq\",\"rhs\":\"Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True), Pow(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)), Integer(-1)))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-RATIONAL_CANONICAL-001"
+    },
+    {
+      "category": "RATIONAL_CANONICAL",
+      "classification": "CORE",
+      "domain_guards": [
+        "1 + T + sigma != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "dPhi*beta/(T + sigma + 1) = S",
+      "expression_latex": "\\frac{\\Delta\\Phi \\beta}{T + \\sigma + 1} = S",
+      "expression_unicode": "ΔΦ*β/(T + σ + 1) = S",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": "S",
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True), Pow(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)), Integer(-1)))\",\"relation\":\"Eq\",\"rhs\":\"Symbol('S', real=True)\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-RATIONAL_CANONICAL-002"
+    },
+    {
+      "category": "CROSS_FACTORED",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "S*(T + sigma + 1) = dPhi*beta",
+      "expression_latex": "S \\left(T + \\sigma + 1\\right) = \\Delta\\Phi \\beta",
+      "expression_unicode": "S*(T + σ + 1) = ΔΦ*β",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R04_FACTOR",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('S', real=True), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)))\",\"relation\":\"Eq\",\"rhs\":\"Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-CROSS_FACTORED-001"
+    },
+    {
+      "category": "CROSS_FACTORED",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "dPhi*beta = S*(T + sigma + 1)",
+      "expression_latex": "\\Delta\\Phi \\beta = S \\left(T + \\sigma + 1\\right)",
+      "expression_unicode": "ΔΦ*β = S*(T + σ + 1)",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True))\",\"relation\":\"Eq\",\"rhs\":\"Mul(Symbol('S', real=True), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-CROSS_FACTORED-002"
+    },
+    {
+      "category": "CROSS_EXPANDED",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "S*T + S*sigma + S = dPhi*beta",
+      "expression_latex": "S T + S \\sigma + S = \\Delta\\Phi \\beta",
+      "expression_unicode": "S*T + S*σ + S = ΔΦ*β",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R03_EXPAND",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Add(Mul(Symbol('S', real=True), Symbol('T', real=True)), Mul(Symbol('S', real=True), Symbol('sigma', real=True)), Symbol('S', real=True))\",\"relation\":\"Eq\",\"rhs\":\"Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-CROSS_EXPANDED-001"
+    },
+    {
+      "category": "CROSS_EXPANDED",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "dPhi*beta = S*T + S*sigma + S",
+      "expression_latex": "\\Delta\\Phi \\beta = S T + S \\sigma + S",
+      "expression_unicode": "ΔΦ*β = S*T + S*σ + S",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True))\",\"relation\":\"Eq\",\"rhs\":\"Add(Mul(Symbol('S', real=True), Symbol('T', real=True)), Mul(Symbol('S', real=True), Symbol('sigma', real=True)), Symbol('S', real=True))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-CROSS_EXPANDED-002"
+    },
+    {
+      "category": "ZERO_RESIDUAL",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "-dPhi*beta + S*(T + sigma + 1) = 0",
+      "expression_latex": "- \\Delta\\Phi \\beta + S \\left(T + \\sigma + 1\\right) = 0",
+      "expression_unicode": "-ΔΦ*β + S*(T + σ + 1) = 0",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R05_ZERO_RESIDUAL",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Add(Mul(Integer(-1), Symbol('DeltaPhi', real=True), Symbol('beta', real=True)), Mul(Symbol('S', real=True), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1))))\",\"relation\":\"Eq\",\"rhs\":\"Integer(0)\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ZERO_RESIDUAL-001"
+    },
+    {
+      "category": "ZERO_RESIDUAL",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "-dPhi*beta + S*T + S*sigma + S = 0",
+      "expression_latex": "- \\Delta\\Phi \\beta + S T + S \\sigma + S = 0",
+      "expression_unicode": "-ΔΦ*β + S*T + S*σ + S = 0",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R05_ZERO_RESIDUAL",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Add(Mul(Integer(-1), Symbol('DeltaPhi', real=True), Symbol('beta', real=True)), Mul(Symbol('S', real=True), Symbol('T', real=True)), Mul(Symbol('S', real=True), Symbol('sigma', real=True)), Symbol('S', real=True))\",\"relation\":\"Eq\",\"rhs\":\"Integer(0)\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ZERO_RESIDUAL-002"
+    },
+    {
+      "category": "ZERO_RESIDUAL",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "0 = dPhi*beta - S*(T + sigma + 1)",
+      "expression_latex": "0 = \\Delta\\Phi \\beta - S \\left(T + \\sigma + 1\\right)",
+      "expression_unicode": "0 = ΔΦ*β - S*(T + σ + 1)",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Integer(0)\",\"relation\":\"Eq\",\"rhs\":\"Add(Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True)), Mul(Integer(-1), Symbol('S', real=True), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1))))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ZERO_RESIDUAL-003"
+    },
+    {
+      "category": "ZERO_RESIDUAL",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "0 = dPhi*beta - S*T - S*sigma - S",
+      "expression_latex": "0 = \\Delta\\Phi \\beta - S T - S \\sigma - S",
+      "expression_unicode": "0 = ΔΦ*β - S*T - S*σ - S",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Integer(0)\",\"relation\":\"Eq\",\"rhs\":\"Add(Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True)), Mul(Integer(-1), Symbol('S', real=True), Symbol('T', real=True)), Mul(Integer(-1), Symbol('S', real=True), Symbol('sigma', real=True)), Mul(Integer(-1), Symbol('S', real=True)))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ZERO_RESIDUAL-004"
+    },
+    {
+      "category": "ZERO_RESIDUAL",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "dPhi*beta - S*(T + sigma + 1) = 0",
+      "expression_latex": "\\Delta\\Phi \\beta - S \\left(T + \\sigma + 1\\right) = 0",
+      "expression_unicode": "ΔΦ*β - S*(T + σ + 1) = 0",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R06_NEGATE_RESIDUAL",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Add(Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True)), Mul(Integer(-1), Symbol('S', real=True), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1))))\",\"relation\":\"Eq\",\"rhs\":\"Integer(0)\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ZERO_RESIDUAL-005"
+    },
+    {
+      "category": "ZERO_RESIDUAL",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "dPhi*beta - S*T - S*sigma - S = 0",
+      "expression_latex": "\\Delta\\Phi \\beta - S T - S \\sigma - S = 0",
+      "expression_unicode": "ΔΦ*β - S*T - S*σ - S = 0",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R06_NEGATE_RESIDUAL",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Add(Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True)), Mul(Integer(-1), Symbol('S', real=True), Symbol('T', real=True)), Mul(Integer(-1), Symbol('S', real=True), Symbol('sigma', real=True)), Mul(Integer(-1), Symbol('S', real=True)))\",\"relation\":\"Eq\",\"rhs\":\"Integer(0)\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ZERO_RESIDUAL-006"
+    },
+    {
+      "category": "ZERO_RESIDUAL",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "0 = -dPhi*beta + S*(T + sigma + 1)",
+      "expression_latex": "0 = - \\Delta\\Phi \\beta + S \\left(T + \\sigma + 1\\right)",
+      "expression_unicode": "0 = -ΔΦ*β + S*(T + σ + 1)",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Integer(0)\",\"relation\":\"Eq\",\"rhs\":\"Add(Mul(Integer(-1), Symbol('DeltaPhi', real=True), Symbol('beta', real=True)), Mul(Symbol('S', real=True), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1))))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ZERO_RESIDUAL-007"
+    },
+    {
+      "category": "ZERO_RESIDUAL",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "0 = -dPhi*beta + S*T + S*sigma + S",
+      "expression_latex": "0 = - \\Delta\\Phi \\beta + S T + S \\sigma + S",
+      "expression_unicode": "0 = -ΔΦ*β + S*T + S*σ + S",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Integer(0)\",\"relation\":\"Eq\",\"rhs\":\"Add(Mul(Integer(-1), Symbol('DeltaPhi', real=True), Symbol('beta', real=True)), Mul(Symbol('S', real=True), Symbol('T', real=True)), Mul(Symbol('S', real=True), Symbol('sigma', real=True)), Symbol('S', real=True))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ZERO_RESIDUAL-008"
+    },
+    {
+      "category": "ISOLATION",
+      "classification": "CORE",
+      "domain_guards": [
+        "beta != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "dPhi = S*(T + sigma + 1)/beta",
+      "expression_latex": "\\Delta\\Phi = \\frac{S \\left(T + \\sigma + 1\\right)}{\\beta}",
+      "expression_unicode": "ΔΦ = S*(T + σ + 1)/β",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R09_ISOLATE_DELTAPHI",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": "DeltaPhi",
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Symbol('DeltaPhi', real=True)\",\"relation\":\"Eq\",\"rhs\":\"Mul(Symbol('S', real=True), Pow(Symbol('beta', real=True), Integer(-1)), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ISOLATION-001"
+    },
+    {
+      "category": "ISOLATION",
+      "classification": "CORE",
+      "domain_guards": [
+        "1 + T + sigma != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "S = dPhi*beta/(T + sigma + 1)",
+      "expression_latex": "S = \\frac{\\Delta\\Phi \\beta}{T + \\sigma + 1}",
+      "expression_unicode": "S = ΔΦ*β/(T + σ + 1)",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R07_ISOLATE_S",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": "S",
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Symbol('S', real=True)\",\"relation\":\"Eq\",\"rhs\":\"Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True), Pow(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)), Integer(-1)))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ISOLATION-002"
+    },
+    {
+      "category": "ISOLATION",
+      "classification": "CORE",
+      "domain_guards": [
+        "S != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "T = dPhi*beta/S - sigma - 1",
+      "expression_latex": "T = \\frac{\\Delta\\Phi \\beta}{S} - \\sigma - 1",
+      "expression_unicode": "T = ΔΦ*β/S - σ - 1",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R10_ISOLATE_T",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": "T",
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Symbol('T', real=True)\",\"relation\":\"Eq\",\"rhs\":\"Add(Mul(Symbol('DeltaPhi', real=True), Pow(Symbol('S', real=True), Integer(-1)), Symbol('beta', real=True)), Mul(Integer(-1), Symbol('sigma', real=True)), Integer(-1))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ISOLATION-003"
+    },
+    {
+      "category": "ISOLATION",
+      "classification": "CORE",
+      "domain_guards": [
+        "DeltaPhi != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "beta = S*(T + sigma + 1)/dPhi",
+      "expression_latex": "\\beta = \\frac{S \\left(T + \\sigma + 1\\right)}{\\Delta\\Phi}",
+      "expression_unicode": "β = S*(T + σ + 1)/ΔΦ",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R08_ISOLATE_BETA",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": "beta",
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Symbol('beta', real=True)\",\"relation\":\"Eq\",\"rhs\":\"Mul(Pow(Symbol('DeltaPhi', real=True), Integer(-1)), Symbol('S', real=True), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ISOLATION-004"
+    },
+    {
+      "category": "ISOLATION",
+      "classification": "CORE",
+      "domain_guards": [
+        "S != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "sigma = dPhi*beta/S - T - 1",
+      "expression_latex": "\\sigma = \\frac{\\Delta\\Phi \\beta}{S} - T - 1",
+      "expression_unicode": "σ = ΔΦ*β/S - T - 1",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R11_ISOLATE_SIGMA",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": "sigma",
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Symbol('sigma', real=True)\",\"relation\":\"Eq\",\"rhs\":\"Add(Mul(Symbol('DeltaPhi', real=True), Pow(Symbol('S', real=True), Integer(-1)), Symbol('beta', real=True)), Mul(Integer(-1), Symbol('T', real=True)), Integer(-1))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ISOLATION-005"
+    },
+    {
+      "category": "ISOLATION",
+      "classification": "CORE",
+      "domain_guards": [
+        "S != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "dPhi*beta/S - T - 1 = sigma",
+      "expression_latex": "\\frac{\\Delta\\Phi \\beta}{S} - T - 1 = \\sigma",
+      "expression_unicode": "ΔΦ*β/S - T - 1 = σ",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": "sigma",
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Add(Mul(Symbol('DeltaPhi', real=True), Pow(Symbol('S', real=True), Integer(-1)), Symbol('beta', real=True)), Mul(Integer(-1), Symbol('T', real=True)), Integer(-1))\",\"relation\":\"Eq\",\"rhs\":\"Symbol('sigma', real=True)\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ISOLATION-006"
+    },
+    {
+      "category": "ISOLATION",
+      "classification": "CORE",
+      "domain_guards": [
+        "S != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "dPhi*beta/S - sigma - 1 = T",
+      "expression_latex": "\\frac{\\Delta\\Phi \\beta}{S} - \\sigma - 1 = T",
+      "expression_unicode": "ΔΦ*β/S - σ - 1 = T",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": "T",
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Add(Mul(Symbol('DeltaPhi', real=True), Pow(Symbol('S', real=True), Integer(-1)), Symbol('beta', real=True)), Mul(Integer(-1), Symbol('sigma', real=True)), Integer(-1))\",\"relation\":\"Eq\",\"rhs\":\"Symbol('T', real=True)\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ISOLATION-007"
+    },
+    {
+      "category": "ISOLATION",
+      "classification": "CORE",
+      "domain_guards": [
+        "DeltaPhi != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "S*(T + sigma + 1)/dPhi = beta",
+      "expression_latex": "\\frac{S \\left(T + \\sigma + 1\\right)}{\\Delta\\Phi} = \\beta",
+      "expression_unicode": "S*(T + σ + 1)/ΔΦ = β",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": "beta",
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Pow(Symbol('DeltaPhi', real=True), Integer(-1)), Symbol('S', real=True), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)))\",\"relation\":\"Eq\",\"rhs\":\"Symbol('beta', real=True)\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ISOLATION-008"
+    },
+    {
+      "category": "ISOLATION",
+      "classification": "CORE",
+      "domain_guards": [
+        "1 + T + sigma != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "dPhi*beta/(T + sigma + 1) = S",
+      "expression_latex": "\\frac{\\Delta\\Phi \\beta}{T + \\sigma + 1} = S",
+      "expression_unicode": "ΔΦ*β/(T + σ + 1) = S",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": "S",
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True), Pow(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)), Integer(-1)))\",\"relation\":\"Eq\",\"rhs\":\"Symbol('S', real=True)\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ISOLATION-009"
+    },
+    {
+      "category": "ISOLATION",
+      "classification": "CORE",
+      "domain_guards": [
+        "beta != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "S*(T + sigma + 1)/beta = dPhi",
+      "expression_latex": "\\frac{S \\left(T + \\sigma + 1\\right)}{\\beta} = \\Delta\\Phi",
+      "expression_unicode": "S*(T + σ + 1)/β = ΔΦ",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": "DeltaPhi",
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('S', real=True), Pow(Symbol('beta', real=True), Integer(-1)), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)))\",\"relation\":\"Eq\",\"rhs\":\"Symbol('DeltaPhi', real=True)\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-ISOLATION-010"
+    },
+    {
+      "category": "PROPORTION",
+      "classification": "CORE",
+      "domain_guards": [
+        "1 + T + sigma != 0",
+        "DeltaPhi != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "(T + sigma + 1)/dPhi = beta/S",
+      "expression_latex": "\\frac{T + \\sigma + 1}{\\Delta\\Phi} = \\frac{\\beta}{S}",
+      "expression_unicode": "(T + σ + 1)/ΔΦ = β/S",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R12_PROPORTION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Pow(Symbol('DeltaPhi', real=True), Integer(-1)), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)))\",\"relation\":\"Eq\",\"rhs\":\"Mul(Pow(Symbol('S', real=True), Integer(-1)), Symbol('beta', real=True))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-PROPORTION-001"
+    },
+    {
+      "category": "PROPORTION",
+      "classification": "CORE",
+      "domain_guards": [
+        "DeltaPhi != 0",
+        "S != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "S/dPhi = beta/(T + sigma + 1)",
+      "expression_latex": "\\frac{S}{\\Delta\\Phi} = \\frac{\\beta}{T + \\sigma + 1}",
+      "expression_unicode": "S/ΔΦ = β/(T + σ + 1)",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R12_PROPORTION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Pow(Symbol('DeltaPhi', real=True), Integer(-1)), Symbol('S', real=True))\",\"relation\":\"Eq\",\"rhs\":\"Mul(Symbol('beta', real=True), Pow(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)), Integer(-1)))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-PROPORTION-002"
+    },
+    {
+      "category": "PROPORTION",
+      "classification": "CORE",
+      "domain_guards": [
+        "1 + T + sigma != 0",
+        "beta != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "(T + sigma + 1)/beta = dPhi/S",
+      "expression_latex": "\\frac{T + \\sigma + 1}{\\beta} = \\frac{\\Delta\\Phi}{S}",
+      "expression_unicode": "(T + σ + 1)/β = ΔΦ/S",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R12_PROPORTION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Pow(Symbol('beta', real=True), Integer(-1)), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)))\",\"relation\":\"Eq\",\"rhs\":\"Mul(Symbol('DeltaPhi', real=True), Pow(Symbol('S', real=True), Integer(-1)))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-PROPORTION-003"
+    },
+    {
+      "category": "PROPORTION",
+      "classification": "CORE",
+      "domain_guards": [
+        "S != 0",
+        "beta != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "S/beta = dPhi/(T + sigma + 1)",
+      "expression_latex": "\\frac{S}{\\beta} = \\frac{\\Delta\\Phi}{T + \\sigma + 1}",
+      "expression_unicode": "S/β = ΔΦ/(T + σ + 1)",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R12_PROPORTION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('S', real=True), Pow(Symbol('beta', real=True), Integer(-1)))\",\"relation\":\"Eq\",\"rhs\":\"Mul(Symbol('DeltaPhi', real=True), Pow(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)), Integer(-1)))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-PROPORTION-004"
+    },
+    {
+      "category": "PROPORTION",
+      "classification": "CORE",
+      "domain_guards": [
+        "1 + T + sigma != 0",
+        "DeltaPhi != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "beta/S = (T + sigma + 1)/dPhi",
+      "expression_latex": "\\frac{\\beta}{S} = \\frac{T + \\sigma + 1}{\\Delta\\Phi}",
+      "expression_unicode": "β/S = (T + σ + 1)/ΔΦ",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Pow(Symbol('S', real=True), Integer(-1)), Symbol('beta', real=True))\",\"relation\":\"Eq\",\"rhs\":\"Mul(Pow(Symbol('DeltaPhi', real=True), Integer(-1)), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-PROPORTION-005"
+    },
+    {
+      "category": "PROPORTION",
+      "classification": "CORE",
+      "domain_guards": [
+        "S != 0",
+        "beta != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "dPhi/(T + sigma + 1) = S/beta",
+      "expression_latex": "\\frac{\\Delta\\Phi}{T + \\sigma + 1} = \\frac{S}{\\beta}",
+      "expression_unicode": "ΔΦ/(T + σ + 1) = S/β",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('DeltaPhi', real=True), Pow(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)), Integer(-1)))\",\"relation\":\"Eq\",\"rhs\":\"Mul(Symbol('S', real=True), Pow(Symbol('beta', real=True), Integer(-1)))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-PROPORTION-006"
+    },
+    {
+      "category": "PROPORTION",
+      "classification": "CORE",
+      "domain_guards": [
+        "1 + T + sigma != 0",
+        "beta != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "dPhi/S = (T + sigma + 1)/beta",
+      "expression_latex": "\\frac{\\Delta\\Phi}{S} = \\frac{T + \\sigma + 1}{\\beta}",
+      "expression_unicode": "ΔΦ/S = (T + σ + 1)/β",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('DeltaPhi', real=True), Pow(Symbol('S', real=True), Integer(-1)))\",\"relation\":\"Eq\",\"rhs\":\"Mul(Pow(Symbol('beta', real=True), Integer(-1)), Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-PROPORTION-007"
+    },
+    {
+      "category": "PROPORTION",
+      "classification": "CORE",
+      "domain_guards": [
+        "DeltaPhi != 0",
+        "S != 0"
+      ],
+      "equivalence_proof": {
+        "method": "SUBSTITUTION_S_EQ_CANONICAL_RHS",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "beta/(T + sigma + 1) = S/dPhi",
+      "expression_latex": "\\frac{\\beta}{T + \\sigma + 1} = \\frac{S}{\\Delta\\Phi}",
+      "expression_unicode": "β/(T + σ + 1) = S/ΔΦ",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R01_SWAP_ORIENTATION",
+      "semantic_sha256": "48e55e2c84b1c377b910a4c75bad7b0d6af3416b01fc066304c8aee272b600de",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('beta', real=True), Pow(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)), Integer(-1)))\",\"relation\":\"Eq\",\"rhs\":\"Mul(Pow(Symbol('DeltaPhi', real=True), Integer(-1)), Symbol('S', real=True))\"}",
+      "terminal": false,
+      "variant_id": "SADDV2-PROPORTION-008"
+    },
+    {
+      "category": "LOGARITHMIC",
+      "classification": "DERIVED",
+      "domain_guards": [
+        "1 + T + sigma > 0",
+        "DeltaPhi > 0",
+        "S > 0",
+        "beta > 0"
+      ],
+      "equivalence_proof": {
+        "method": "LOG_SUBSTITUTION_POSITIVE_DOMAIN",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "log(S) + log(T + sigma + 1) = log(dPhi) + log(beta)",
+      "expression_latex": "\\log{\\left(S \\right)} + \\log{\\left(T + \\sigma + 1 \\right)} = \\log{\\left(\\Delta\\Phi \\right)} + \\log{\\left(\\beta \\right)}",
+      "expression_unicode": "log(S) + log(T + σ + 1) = log(ΔΦ) + log(β)",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R13_LOGARITHM",
+      "semantic_sha256": "56571c0880250d60ee01abc1f660b5ad5eec01abd8ab88ec819787716d3179a2",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Add(log(Symbol('S', real=True)), log(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1))))\",\"relation\":\"Eq\",\"rhs\":\"Add(log(Symbol('DeltaPhi', real=True)), log(Symbol('beta', real=True)))\"}",
+      "terminal": true,
+      "variant_id": "SADDV2-LOGARITHMIC-001"
+    },
+    {
+      "category": "LOGARITHMIC",
+      "classification": "DERIVED",
+      "domain_guards": [
+        "1 + T + sigma > 0",
+        "DeltaPhi > 0",
+        "S > 0",
+        "beta > 0"
+      ],
+      "equivalence_proof": {
+        "method": "LOG_SUBSTITUTION_POSITIVE_DOMAIN",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "log(S) = log(dPhi) + log(beta) - log(T + sigma + 1)",
+      "expression_latex": "\\log{\\left(S \\right)} = \\log{\\left(\\Delta\\Phi \\right)} + \\log{\\left(\\beta \\right)} - \\log{\\left(T + \\sigma + 1 \\right)}",
+      "expression_unicode": "log(S) = log(ΔΦ) + log(β) - log(T + σ + 1)",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R13_LOGARITHM",
+      "semantic_sha256": "56571c0880250d60ee01abc1f660b5ad5eec01abd8ab88ec819787716d3179a2",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"log(Symbol('S', real=True))\",\"relation\":\"Eq\",\"rhs\":\"Add(log(Symbol('DeltaPhi', real=True)), log(Symbol('beta', real=True)), Mul(Integer(-1), log(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)))))\"}",
+      "terminal": true,
+      "variant_id": "SADDV2-LOGARITHMIC-002"
+    },
+    {
+      "category": "LOGARITHMIC",
+      "classification": "DERIVED",
+      "domain_guards": [
+        "1 + T + sigma > 0",
+        "DeltaPhi > 0",
+        "S > 0",
+        "beta > 0"
+      ],
+      "equivalence_proof": {
+        "method": "LOG_SUBSTITUTION_POSITIVE_DOMAIN",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "log(dPhi) + log(beta) - log(T + sigma + 1) = log(S)",
+      "expression_latex": "\\log{\\left(\\Delta\\Phi \\right)} + \\log{\\left(\\beta \\right)} - \\log{\\left(T + \\sigma + 1 \\right)} = \\log{\\left(S \\right)}",
+      "expression_unicode": "log(ΔΦ) + log(β) - log(T + σ + 1) = log(S)",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "INVERSE",
+      "relation": "Eq",
+      "rule_id": "R13_LOGARITHM",
+      "semantic_sha256": "56571c0880250d60ee01abc1f660b5ad5eec01abd8ab88ec819787716d3179a2",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Add(log(Symbol('DeltaPhi', real=True)), log(Symbol('beta', real=True)), Mul(Integer(-1), log(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)))))\",\"relation\":\"Eq\",\"rhs\":\"log(Symbol('S', real=True))\"}",
+      "terminal": true,
+      "variant_id": "SADDV2-LOGARITHMIC-003"
+    },
+    {
+      "category": "ENERGY",
+      "classification": "DERIVED",
+      "domain_guards": [
+        "1 + T + sigma > 0",
+        "DeltaPhi > 0",
+        "S > 0",
+        "beta > 0"
+      ],
+      "equivalence_proof": {
+        "method": "LOG_SUBSTITUTION_POSITIVE_DOMAIN",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "E_Z = -log(dPhi) - log(beta) + log(T + sigma + 1)",
+      "expression_latex": "E_{Z} = - \\log{\\left(\\Delta\\Phi \\right)} - \\log{\\left(\\beta \\right)} + \\log{\\left(T + \\sigma + 1 \\right)}",
+      "expression_unicode": "E_Z = -log(ΔΦ) - log(β) + log(T + σ + 1)",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R14_ENERGY",
+      "semantic_sha256": "dd98c2b5b980452254ad3f2fd4d4f3dd027c1141be05da8aad5131eeea30ed08",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Symbol('E_Z', real=True)\",\"relation\":\"Eq\",\"rhs\":\"Add(Mul(Integer(-1), log(Symbol('DeltaPhi', real=True))), Mul(Integer(-1), log(Symbol('beta', real=True))), log(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1))))\"}",
+      "terminal": true,
+      "variant_id": "SADDV2-ENERGY-001"
+    },
+    {
+      "category": "ENERGY",
+      "classification": "DERIVED",
+      "domain_guards": [
+        "S > 0"
+      ],
+      "equivalence_proof": {
+        "method": "LOG_SUBSTITUTION_POSITIVE_DOMAIN",
+        "residual_after_substitution": "Integer(0)",
+        "statement": "lhs − rhs ≡ 0 après substitution de S = (β·ΔΦ)/(1+T+σ)",
+        "verified": true
+      },
+      "expression_ascii": "E_Z = -log(S)",
+      "expression_latex": "E_{Z} = - \\log{\\left(S \\right)}",
+      "expression_unicode": "E_Z = -log(S)",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Eq",
+      "rule_id": "R14_ENERGY",
+      "semantic_sha256": "b8e71afc933d7cca822fd9dbecc260f62d96b5412a1c21e5474556416a96b1b0",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Symbol('E_Z', real=True)\",\"relation\":\"Eq\",\"rhs\":\"Mul(Integer(-1), log(Symbol('S', real=True)))\"}",
+      "terminal": true,
+      "variant_id": "SADDV2-ENERGY-002"
+    },
+    {
+      "category": "ADMISSIBILITY",
+      "classification": "CORE",
+      "domain_guards": [
+        "1 + T + sigma > 0"
+      ],
+      "equivalence_proof": {
+        "method": "ORDER_PRESERVING_TRANSFORM",
+        "statement": "multiplication des deux membres par D > 0 ; l'ordre est préservé car le domaine physique impose D ≥ 1",
+        "verified": true
+      },
+      "expression_ascii": "dPhi*beta - T - sigma - 1 >= 0",
+      "expression_latex": "\\Delta\\Phi \\beta - T - \\sigma - 1 \\ge 0",
+      "expression_unicode": "ΔΦ*β - T - σ - 1 ≥ 0",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Ge",
+      "rule_id": "A03_RESIDUAL",
+      "semantic_sha256": "37464c7eb12fbdd52119fb742dfa7f744d82a843aeb41372eb24a103430b4b6b",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Add(Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True)), Mul(Integer(-1), Symbol('T', real=True)), Mul(Integer(-1), Symbol('sigma', real=True)), Integer(-1))\",\"relation\":\"Ge\",\"rhs\":\"Integer(0)\"}",
+      "terminal": true,
+      "variant_id": "SADDV2-ADMISSIBILITY-001"
+    },
+    {
+      "category": "ADMISSIBILITY",
+      "classification": "CORE",
+      "domain_guards": [
+        "1 + T + sigma > 0"
+      ],
+      "equivalence_proof": {
+        "method": "ORDER_PRESERVING_TRANSFORM",
+        "statement": "multiplication des deux membres par D > 0 ; l'ordre est préservé car le domaine physique impose D ≥ 1",
+        "verified": true
+      },
+      "expression_ascii": "dPhi*beta >= T + sigma + 1",
+      "expression_latex": "\\Delta\\Phi \\beta \\ge T + \\sigma + 1",
+      "expression_unicode": "ΔΦ*β ≥ T + σ + 1",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Ge",
+      "rule_id": "A02_CLEARED",
+      "semantic_sha256": "37464c7eb12fbdd52119fb742dfa7f744d82a843aeb41372eb24a103430b4b6b",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True))\",\"relation\":\"Ge\",\"rhs\":\"Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1))\"}",
+      "terminal": true,
+      "variant_id": "SADDV2-ADMISSIBILITY-002"
+    },
+    {
+      "category": "ADMISSIBILITY",
+      "classification": "CORE",
+      "domain_guards": [
+        "1 + T + sigma != 0",
+        "1 + T + sigma > 0"
+      ],
+      "equivalence_proof": {
+        "method": "ORDER_PRESERVING_TRANSFORM",
+        "statement": "multiplication des deux membres par D > 0 ; l'ordre est préservé car le domaine physique impose D ≥ 1",
+        "verified": true
+      },
+      "expression_ascii": "dPhi*beta/(T + sigma + 1) >= 1",
+      "expression_latex": "\\frac{\\Delta\\Phi \\beta}{T + \\sigma + 1} \\ge 1",
+      "expression_unicode": "ΔΦ*β/(T + σ + 1) ≥ 1",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Ge",
+      "rule_id": "A04_RATIONAL",
+      "semantic_sha256": "37464c7eb12fbdd52119fb742dfa7f744d82a843aeb41372eb24a103430b4b6b",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True), Pow(Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1)), Integer(-1)))\",\"relation\":\"Ge\",\"rhs\":\"Integer(1)\"}",
+      "terminal": true,
+      "variant_id": "SADDV2-ADMISSIBILITY-003"
+    },
+    {
+      "category": "ADMISSIBILITY",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "ORDER_PRESERVING_TRANSFORM",
+        "statement": "multiplication des deux membres par D > 0 ; l'ordre est préservé car le domaine physique impose D ≥ 1",
+        "verified": true
+      },
+      "expression_ascii": "S >= 1",
+      "expression_latex": "S \\ge 1",
+      "expression_unicode": "S ≥ 1",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Ge",
+      "rule_id": "A01_THRESHOLD",
+      "semantic_sha256": "0d66d95d441c05de87b3b14de0812ccf2d6c7e82fe36d042cd29c95784ddd954",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Symbol('S', real=True)\",\"relation\":\"Ge\",\"rhs\":\"Integer(1)\"}",
+      "terminal": true,
+      "variant_id": "SADDV2-ADMISSIBILITY-004"
+    },
+    {
+      "category": "ADMISSIBILITY",
+      "classification": "CORE",
+      "domain_guards": [
+        "1 + T + sigma > 0"
+      ],
+      "equivalence_proof": {
+        "method": "ORDER_PRESERVING_TRANSFORM",
+        "statement": "multiplication des deux membres par D > 0 ; l'ordre est préservé car le domaine physique impose D ≥ 1",
+        "verified": true
+      },
+      "expression_ascii": "dPhi*beta > T + sigma + 1",
+      "expression_latex": "\\Delta\\Phi \\beta > T + \\sigma + 1",
+      "expression_unicode": "ΔΦ*β > T + σ + 1",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Gt",
+      "rule_id": "A06_CLEARED_STRICT",
+      "semantic_sha256": "7d00c56c476f955f1737e4429bd962a85b23c24abd631dc437898b59ef47587e",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Mul(Symbol('DeltaPhi', real=True), Symbol('beta', real=True))\",\"relation\":\"Gt\",\"rhs\":\"Add(Symbol('T', real=True), Symbol('sigma', real=True), Integer(1))\"}",
+      "terminal": true,
+      "variant_id": "SADDV2-ADMISSIBILITY-005"
+    },
+    {
+      "category": "ADMISSIBILITY",
+      "classification": "CORE",
+      "domain_guards": [],
+      "equivalence_proof": {
+        "method": "ORDER_PRESERVING_TRANSFORM",
+        "statement": "multiplication des deux membres par D > 0 ; l'ordre est préservé car le domaine physique impose D ≥ 1",
+        "verified": true
+      },
+      "expression_ascii": "S > 1",
+      "expression_latex": "S > 1",
+      "expression_unicode": "S > 1",
+      "grammar_id": "FORM_GRAMMAR_V1",
+      "grammar_version": "1.0.0",
+      "orientation": "DIRECT",
+      "relation": "Gt",
+      "rule_id": "A05_THRESHOLD_STRICT",
+      "semantic_sha256": "78396a584012115ae427676d20a1a6450001c9e8ba67d8ad8e2297c1a1811d7f",
+      "solved_for": null,
+      "source_doi": "10.5281/zenodo.17559249",
+      "status": "PASS",
+      "sympy_serialization": "{\"lhs\":\"Symbol('S', real=True)\",\"relation\":\"Gt\",\"rhs\":\"Integer(1)\"}",
+      "terminal": true,
+      "variant_id": "SADDV2-ADMISSIBILITY-006"
+    }
+  ]
+}
