@@ -12,12 +12,12 @@
   ],
   "prior_validated_findings_closed": 24,
   "residual_findings": [],
-  "review_sha512": "40c4ae34af8cdb6cb90e9289b0278337216b649a05afabf5572fc7b3e3610975b8ba816862d4a3896721883566fe1b7182b98c7d6ac48689d73a46d47c95ff16",
-  "review_signature": "nYYm+O90HJnufotBQMOJtU8oD2GV1qn74RPQqQT8qTI5HBDRhbkJUE/h2oZ+Afd/EJiybyXgI42fc2+93SRHAA==",
+  "review_sha512": "9e1448e06026c6e562dc85722aa1cf247307cf4e7a36b070845b7428f34368694399305553ea1e98269589a6a6c55631dbb8e81fea4dcc8d4dd580ccd11eb4f2",
+  "review_signature": "f3Y3fCctAIuaOY3ahexadquq8LqfVBkF9tl/6QqpZNMz2jkIAZd3F6G/3LNyKyROyF/WY1IOxPq4BqJfpefADQ==",
   "reviewed_files": 18,
   "reviewer": "CODEX-SECURITY-REVIEWER-V1",
   "schema": "ZORAN-SECURITY-REVIEW-V1",
   "scope": "Complete source-backed multi-pass review of NLP coherence runtime",
-  "source_set_sha512": "2e8ff3b38ca33997270d1ba7ba9956753147e8e4f8cfff23efdedec2711d5a04e670b9a5411a9eca909f853ec2a9b7e081509b8aabf1ddcc213808f233e98ee7",
+  "source_set_sha512": "fabc22b19f8730dd29c31d1aadd370fe60a8f0168fbf7f1770b5c069be80550c713293ebfefec78704945fc934ecc23f73a925db53c20998afa5118ee9d12c07",
   "verdict": "PASS"
 }

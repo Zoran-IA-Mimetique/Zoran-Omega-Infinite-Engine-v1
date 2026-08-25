@@ -38,7 +38,7 @@
     "target": {
       "displayName": "Zoran NLP Coherence Runtime v1",
       "kind": "directory_snapshot",
-      "snapshotDigest": "codex-security-snapshot/v1:sha256:06a9c44d6e1695f05498ff2bba97db9537ab64c8e2e7d639cf03d8e30a5ce515",
+      "snapshotDigest": "codex-security-snapshot/v1:sha256:7fda11caa0f22962a2786947eb1c3050369c8e37868ed181e9472df1fb2b032a",
       "targetId": "zoran-nlp-coherence-runtime-v1"
     }
   },

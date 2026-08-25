@@ -7,7 +7,7 @@ The scan reviewed the canonical include paths and exclusions listed below.
 - Scan mode: repository
 - Target kind: directory_snapshot
 - Target ID: zoran-nlp-coherence-runtime-v1
-- Snapshot digest: codex-security-snapshot/v1:sha256:06a9c44d6e1695f05498ff2bba97db9537ab64c8e2e7d639cf03d8e30a5ce515
+- Snapshot digest: codex-security-snapshot/v1:sha256:7fda11caa0f22962a2786947eb1c3050369c8e37868ed181e9472df1fb2b032a
 - Inventory strategy: repository
 - Included paths: .
 - Excluded paths: artifacts/, security_scan/, evidence/SECURITY_REVIEW_V1.json, SHA512SUMS
