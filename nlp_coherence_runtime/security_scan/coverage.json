@@ -1,0 +1,98 @@
+{
+  "completeness": "complete",
+  "deferred": [],
+  "documentType": "codex-security.coverage",
+  "excludePaths": [
+    "artifacts/",
+    "security_scan/",
+    "evidence/SECURITY_REVIEW_V1.json",
+    "SHA512SUMS"
+  ],
+  "explicitExclusions": [
+    {
+      "pattern": "artifacts/",
+      "reason": "Generated only after source review; cryptographically sealed by SHA512SUMS."
+    },
+    {
+      "pattern": "security_scan/",
+      "reason": "Canonical scan output, not executable input to the reviewed runtime."
+    },
+    {
+      "pattern": "evidence/SECURITY_REVIEW_V1.json",
+      "reason": "Generated signed projection of this completed review."
+    },
+    {
+      "pattern": "SHA512SUMS",
+      "reason": "Generated only after all proof artifacts are final."
+    }
+  ],
+  "includePaths": [
+    "."
+  ],
+  "inventoryStrategy": "repository",
+  "mode": "repository",
+  "scanId": "scan_zoran_nlp_coherence_20260825_final",
+  "schemaVersion": "1.0",
+  "surfaces": [
+    {
+      "disposition": "no_issue_found",
+      "id": "surface_canonicalization",
+      "label": "Canonical JSON, scalar bounds and hostile trees",
+      "receiptRefs": []
+    },
+    {
+      "disposition": "no_issue_found",
+      "id": "surface_authority",
+      "label": "Ed25519 authority receipts and exact policy binding",
+      "receiptRefs": []
+    },
+    {
+      "disposition": "no_issue_found",
+      "id": "surface_replay",
+      "label": "SQLite replay ledger confinement and concurrency",
+      "receiptRefs": []
+    },
+    {
+      "disposition": "no_issue_found",
+      "id": "surface_pipeline",
+      "label": "Causal 00 to 05B receipt chain and re-execution",
+      "receiptRefs": []
+    },
+    {
+      "disposition": "no_issue_found",
+      "id": "surface_semantics",
+      "label": "Goal, subject, predicate and evidence binding",
+      "receiptRefs": []
+    },
+    {
+      "disposition": "no_issue_found",
+      "id": "surface_nlg",
+      "label": "Closed French realization and injection resistance",
+      "receiptRefs": []
+    },
+    {
+      "disposition": "no_issue_found",
+      "id": "surface_runtime",
+      "label": "Runtime envelope signing, freshness and immutable verifier",
+      "receiptRefs": []
+    },
+    {
+      "disposition": "no_issue_found",
+      "id": "surface_calibration",
+      "label": "Independent signed S calibration and threshold floor",
+      "receiptRefs": []
+    },
+    {
+      "disposition": "no_issue_found",
+      "id": "surface_proof",
+      "label": "Structured bounded proof and complete SHA-512 seal",
+      "receiptRefs": []
+    },
+    {
+      "disposition": "no_issue_found",
+      "id": "surface_supply_chain",
+      "label": "Hash-locked dependencies and pinned CI actions",
+      "receiptRefs": []
+    }
+  ]
+}

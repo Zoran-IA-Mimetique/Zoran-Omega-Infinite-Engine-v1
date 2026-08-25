@@ -1,0 +1,23 @@
+{
+  "finding_counts": {
+    "critical": 0,
+    "high": 0,
+    "informational": 0,
+    "low": 0,
+    "medium": 0
+  },
+  "limitations": [
+    "Runtime deployment isolation and production key custody are not exercised by this source scan.",
+    "External S calibration and qualified human naturalness remain NON_MESURÉ."
+  ],
+  "prior_validated_findings_closed": 24,
+  "residual_findings": [],
+  "review_sha512": "9e1448e06026c6e562dc85722aa1cf247307cf4e7a36b070845b7428f34368694399305553ea1e98269589a6a6c55631dbb8e81fea4dcc8d4dd580ccd11eb4f2",
+  "review_signature": "f3Y3fCctAIuaOY3ahexadquq8LqfVBkF9tl/6QqpZNMz2jkIAZd3F6G/3LNyKyROyF/WY1IOxPq4BqJfpefADQ==",
+  "reviewed_files": 18,
+  "reviewer": "CODEX-SECURITY-REVIEWER-V1",
+  "schema": "ZORAN-SECURITY-REVIEW-V1",
+  "scope": "Complete source-backed multi-pass review of NLP coherence runtime",
+  "source_set_sha512": "fabc22b19f8730dd29c31d1aadd370fe60a8f0168fbf7f1770b5c069be80550c713293ebfefec78704945fc934ecc23f73a925db53c20998afa5118ee9d12c07",
+  "verdict": "PASS"
+}

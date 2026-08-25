@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools==83.0.0", "wheel==0.47.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zoran-nlp-coherence-runtime"
+version = "1.0.0"
+description = "Fail-closed Zoran NLP coherence stitch with Ed25519 authority and SHA-512 evidence"
+requires-python = "==3.12.*"
+license = {text = "MIT"}
+authors = [{name = "Frédéric Tabary — Institut IA Inc. / Coherence Labs"}]
+dependencies = ["cryptography==46.0.0"]
+
+[tool.setuptools.packages.find]
+include = ["zoran_nlp_coherence*"]

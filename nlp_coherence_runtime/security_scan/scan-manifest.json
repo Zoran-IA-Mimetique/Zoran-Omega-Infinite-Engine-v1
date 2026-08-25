@@ -1,0 +1,46 @@
+{
+  "documentType": "codex-security.scan-manifest",
+  "scan": {
+    "artifacts": [
+      {
+        "mediaType": "application/json",
+        "path": "findings.json",
+        "sha256": "69b9594d988bd897bc618983fcf9eea4a299ab50a0d57d5f13983a9b25180238"
+      },
+      {
+        "mediaType": "application/json",
+        "path": "coverage.json",
+        "sha256": "87257e6fea2e529391928209115037959f729214398a24b29fd0d96e14320f87"
+      }
+    ],
+    "completedAt": "2026-08-25T15:20:24Z",
+    "coverageRef": "coverage.json",
+    "findingsRef": "findings.json",
+    "id": "scan_zoran_nlp_coherence_20260825_final",
+    "producer": {
+      "name": "codex-security-plugin",
+      "version": "0.1.21"
+    },
+    "scope": {
+      "excludePaths": [
+        "artifacts/",
+        "security_scan/",
+        "evidence/SECURITY_REVIEW_V1.json",
+        "SHA512SUMS"
+      ],
+      "includePaths": [
+        "."
+      ]
+    },
+    "sealedAt": "2026-08-25T15:20:24Z",
+    "startedAt": "2026-08-25T13:00:00Z",
+    "status": "completed",
+    "target": {
+      "displayName": "Zoran NLP Coherence Runtime v1",
+      "kind": "directory_snapshot",
+      "snapshotDigest": "codex-security-snapshot/v1:sha256:7fda11caa0f22962a2786947eb1c3050369c8e37868ed181e9472df1fb2b032a",
+      "targetId": "zoran-nlp-coherence-runtime-v1"
+    }
+  },
+  "schemaVersion": "1.0"
+}
