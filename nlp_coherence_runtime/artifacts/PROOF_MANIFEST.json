@@ -1,0 +1,88 @@
+{
+  "bounded_verdict": "PASS",
+  "classification": "CLOS_THÉORIQUE_UTILISABLE",
+  "deterministic_verification": {
+    "baseline_sha512": "4c1a7ab0202af78b7d6674647705a05ecbe7bee4e3b002be4f94a100574b2e22f3f6b5edc4b72f8c406999e06ec826d8773758d6c31fc9e612c632dcc499c9c2",
+    "passed": 1000,
+    "total": 1000
+  },
+  "environment": {
+    "cryptography": "46.0.0",
+    "python": "3.12.13"
+  },
+  "external_validation": "NON_MESURÉ",
+  "open_debt": [
+    "EXTERNAL_S_CALIBRATION",
+    "QUALIFIED_HUMAN_NATURALNESS",
+    "PRODUCTION_KEY_CUSTODY",
+    "PLANETARY_EFFECT"
+  ],
+  "pickup_50": {
+    "passed": 50,
+    "population_sha512": "7eb6e62131caed38c446835015b93bd1021b904637fe78ea6ddfce9e8fad5b77b9ca74f80d381ab0dd8ec69e6e5001622d243d238dd0b959061a6c47d0557ad8",
+    "total": 50
+  },
+  "promotion_allowed": false,
+  "s_add_v2": {
+    "formula": "S_ADD_V2 = (β × ΔΦ)/(1 + T + σ)",
+    "measurement": "NON_MESURÉ",
+    "reason": "NO_TRUSTED_EXTERNAL_CALIBRATION_IN_REPOSITORY"
+  },
+  "schema": "ZORAN-NLP-COHERENCE-PROOF-V1",
+  "security_review": {
+    "reason": "BOUND_SECURITY_REVIEW_VERIFIED",
+    "review_sha512": "40c4ae34af8cdb6cb90e9289b0278337216b649a05afabf5572fc7b3e3610975b8ba816862d4a3896721883566fe1b7182b98c7d6ac48689d73a46d47c95ff16",
+    "source_set_sha512": "2e8ff3b38ca33997270d1ba7ba9956753147e8e4f8cfff23efdedec2711d5a04e670b9a5411a9eca909f853ec2a9b7e081509b8aabf1ddcc213808f233e98ee7",
+    "verdict": "PASS"
+  },
+  "source_sha512": {
+    ".github/workflows/nlp-coherence-runtime-ci.yml": "43e74a91123e2bbdebad7979491579009a6fd61861c6905fb2c638110abdaebcf9ada36ea022d86d6a5c297b6255ebfe354a0453ae20286cbb6d478ecccb1f7a",
+    "LICENSE": "dcb1d813c944042fae6713cea8990dff73a87d564dbb25ad8c302b91f3a49f5c0a02a3498aaf42d195753a756fc26053acdffbfd0c6bd1880dc8f0b53a9847d6",
+    "README.md": "3e29189e3bd9df8ac26bd86bed5f0f05b0896b40323148f7907ee33e75d42d764a594b48897b41dda57688cac71807797715e874824a3d530817d5427ecc9c5b",
+    "SECURITY.md": "c74c73e5d6aa60330f1d35db0f5aeea3ee80738125609f34de763e8f9048e86704ca0a1b33a12b7cba7016444eb1f6b8acc5c766b45c951aa2f1df8a4aec6d61",
+    "THREAT_MODEL.md": "b3b0e7765760e172072f0f48cc5765699b0082573557f8edcafdb966554defc63e25579c0737edcbc96df5a5af4c2ccdc2c50a57046ff7601f883288ffc0a700",
+    "build-requirements-lock.txt": "7b6bbf0a2354e10fff9b9e30d985acd803219a9c75e81f0b52be9472ab9064f24f7aac80e7d0fc22a8f41f8a1ed83195ede0e836b68e5ee3609b1fcb145a50de",
+    "evidence/PICKUP_PROTOCOL_V1.json": "affaf7705c45ad031971934ccc98ecadb7192c1c2837aae24c91e50219dbbec144843eb3545bd3429003c2ace76c267e3bc8520646654c6e9165f424a654e49d",
+    "evidence/SECURITY_REVIEW_V1.json": "9ac7e9ddbb08c3f04fe5dfd2bdc6570d9280907b99d7bb67591b859d3847d326d02c6705bd71b77b26e0c2d581863ca8c9f2a50afa49d2dd0c6e6f749d3fad85",
+    "pyproject.toml": "88c66252deb16190f7e0564a049503e7d71b72c7ec11a922dcf0ac6f06ab5b593e3ecf65f06dccb05dc62bbcbc51101346748b87916aada4e21e298237da10bd",
+    "requirements-lock.txt": "db1640b86572a777c2cb4fee96f2e251cbe250b1872919b7cdc6bb8165958a045dcdb14a5672d5d3ca21a96fe60fe9cf617faa084446e1c421a8fb21cc69a683",
+    "security_scan/coverage.json": "32cecd837c86da67df6a49b847d940a2d0afccf650dc4ce8bcb86135c3e0620f677301873aca79962f287673879e55d6a8ea1c450dac0eb59c2cf51b1520dfaa",
+    "security_scan/exports/results.sarif": "c7fcc7bc2cb609a1a8eb62da31c197c42f39500e6bddacc840f1cd980dfa491aa7b44eac6785403550039851634ff679fc83c0e4e1ce096d4c3bd0126ac6a16e",
+    "security_scan/findings.json": "855b1d666b556117c25bcb3525a2b575611f69c0be73935e3082e6f5d54720808f4f75ea0d9e3a7e825c93497e593a1e9cdf3055fec89a467a80ce801f3f59c6",
+    "security_scan/report.md": "378d125a8383d8955e561ca466a135ac0d3834e095356e77e37f6d99da65a2c8ff6082e970f07e3f6f63de60fb63555275643133c6ef1677ee7ecb380d16aa8c",
+    "security_scan/scan-manifest.json": "5709b193270b4126d8134128fa416ac1ece43021ac425231553e800cb0ce38e1f2693db932a3f65cc996f36ae169faf99177fe2966e50210eab973454b84b669",
+    "tests/__init__.py": "be688838ca8686e5c90689bf2ab585cef1137c999b48c70b92f67a5c34dc15697b5d11c982ed6d71be1e1e7f7b4e0733884aa97c3f7a339a8ed03577cf74be09",
+    "tests/test_runtime.py": "b44b7e0d90a23577cb6066887a31838285f45cd4b761463d1eed2c16c3d52c5062a192f35685470964c4964329771e5a415e669f916851009932841375e76b51",
+    "zoran_nlp_coherence/__init__.py": "0e906a4c4dff3a96a3f19ba27bc0d39c3bd8fbc70ab8d0441840008cbba0ea8cec818e7d500e94d8d6cb89514f3dc91e24ca050ba56cb20bde594099751aafe5",
+    "zoran_nlp_coherence/authority.py": "0eab3a847afae19d9018bbac7a362300cf4446240b987b00035ec6b6ce4c628293a07af4bcbc0ea3ea2672c3c1e4250cb8233aed8948fcd1a2df97435d2b9a65",
+    "zoran_nlp_coherence/core.py": "abd04dd01480e12dfe3399b9dba20e84cc1fdd953861a86343554ef25a4bb629814a164b74bbc5ba5368d86a06307de36ce64771a58cda908a8ee76110fc80ea",
+    "zoran_nlp_coherence/nlg.py": "1462c8d33423a9a54629ae9a1460751ebe7246b708e0ff44dceb67d4f549fd27063ce29b2007463c7432c543b86ca8e01306ad085bd549024517bc112a860436",
+    "zoran_nlp_coherence/pipeline.py": "ca3b136eaf24124b80bbf9e9c3a179b44ae0f920032257fb46a5d30d03c500a41efc93456653d48f78f05193d2705cab08d9443fcaf102d79c4d7f07d15eb7b5",
+    "zoran_nlp_coherence/proof.py": "9557031496a2ec07cd92dbabda190962813df43adae558871adc8bffd23847cc9d401cd9dafb42896460fa4d792c226bc09ac2c9cf0148f7bbefc344e030ee18",
+    "zoran_nlp_coherence/runtime.py": "4fb196b8a067554b70a5fe4b65aaa60ccb8cce348540c52e7309ab8dae30cd2d4ba5aaac0725af6b41c3f0026b7c7b3dda16435768dcad5c67dd9c591a1074c0"
+  },
+  "test_denominator": {
+    "passed": 46,
+    "runs": [
+      {
+        "errors": 0,
+        "failures": 0,
+        "ok": true,
+        "runner": "unittest-in-process-structured",
+        "skipped": 0,
+        "test_identity_sha512": "0c6a8f46d6c8f14fe2b0e9b72bec7f1e913d1fa5d774b7e4ca8da9834d19a4700fe571f6914f748b5450575c34027b46a46ad05e9cc93f438768de5f397b6da9",
+        "tests": 46
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "ok": true,
+        "runner": "unittest-in-process-structured",
+        "skipped": 0,
+        "test_identity_sha512": "0c6a8f46d6c8f14fe2b0e9b72bec7f1e913d1fa5d774b7e4ca8da9834d19a4700fe571f6914f748b5450575c34027b46a46ad05e9cc93f438768de5f397b6da9",
+        "tests": 46
+      }
+    ],
+    "total": 46
+  }
+}

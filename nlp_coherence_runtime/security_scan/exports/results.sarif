@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/schemas/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "automationDetails": {
+        "id": "scan_zoran_nlp_coherence_20260825_final"
+      },
+      "properties": {
+        "codexSecuritySchemaVersion": "1.0",
+        "codexSecurityTargetKind": "directory_snapshot"
+      },
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "Codex Security",
+          "rules": [],
+          "version": "0.1.21"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}

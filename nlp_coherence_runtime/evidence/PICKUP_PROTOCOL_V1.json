@@ -1,0 +1,27 @@
+{
+  "protocol_id": "ZORAN-NLP-PICKUP-50-V1",
+  "frozen_before_execution": true,
+  "population": {
+    "size": 50,
+    "request_ids": "REQ-0001 through REQ-0050 inclusive",
+    "distinctness_key": "request_id + fact_id + evidence_id + authority nonce"
+  },
+  "selection": "exhaustive finite population",
+  "oracle": {
+    "REQ-0001..REQ-0025": "PASS: signed exact frame coverage plus one PROVEN fact",
+    "REQ-0026..REQ-0050": "NON_MESURÉ: signed exact frame coverage plus one UNKNOWN fact"
+  },
+  "critical_vetoes": [
+    "missing or extra frame",
+    "invalid Ed25519 signature",
+    "request binding drift",
+    "nonce replay",
+    "FAIL or NON_MESURÉ frame",
+    "node receipt chain drift",
+    "05B self-attributed PASS",
+    "unsigned or unbounded S calibration"
+  ],
+  "pass_threshold": "50/50 exact oracle matches and zero critical veto",
+  "rollback": "git revert the single component commit"
+}
+
